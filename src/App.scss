@@ -1,0 +1,197 @@
+@mixin tag($name,$color){
+    .tag__#{$name} {
+        border-radius: 20px;
+        color: #707078;
+        cursor: pointer;
+        margin-left: 20px;
+        padding: 0 27px;
+        &:before {
+            content: "";
+            display: block;
+            margin-top: 9px;
+            margin-left: -20px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #{$color};
+            position: absolute;
+        }
+    }
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+
+    .title {
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 80px;
+            border-bottom: 3px solid #5b3df5;
+        }
+    }
+
+    .wrapper {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-sizing: border-box;
+        box-shadow: 1px 1px 5px #d8d7d7;
+
+        .add-word {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px 0 20px 20px;
+            border-bottom: 2px solid #eeeef6;
+
+            .input {
+                border: none;
+                height: 50px;
+                font-size: 20px;
+                width: 95%;
+                box-sizing: border-box;
+                padding-left: 10px;
+                &:focus {
+                    outline: none;
+                    background-color: #f8f8f8;
+                }
+            }
+    
+            .plus {
+                position: relative;
+                width: 10%;
+
+                .fa-plus {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    line-height: 50px;
+                    font-size: 30px;
+                    color: #5c3ef5;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .tag {
+            color: #ababb4;
+            display: flex;
+            font-size: 22px;
+            box-sizing: border-box;
+            padding: 20px;
+            border-bottom: 2px solid #eeeef6;
+
+            @include tag(all,#34ff70);
+            @include tag(home,#34ffff);
+            @include tag(work,#ff33a7);
+            @include tag(school,#3275ff);
+
+            #all {
+                border: 2px solid #34ff70;
+            }
+            #home {
+                border: 2px solid #34ffff;
+            }
+            #work {
+                border: 2px solid #ff33a7;
+            }
+            #school {
+                border: 2px solid #3275ff;
+            }
+        }
+
+        .list-work {
+            box-sizing: border-box;
+            padding: 20px 0 20px 20px;
+            min-height: 80px;
+            max-height: 300px;
+            overflow: auto;
+
+            .works {
+                display: flex;
+                margin-bottom: 40px;
+
+                .list-works {
+                    width: 100%;
+                    display: flex;
+                    cursor: pointer;
+
+                    .circle {
+                        color: #6549f5;
+                        display: flex;
+                        width: 40px;
+                        height: 40px;
+                        font-size: 20px;
+                        border-radius: 50%;
+                        border: 2px solid #f1f1f7;
+                        text-align: center;
+                        box-sizing: border-box;
+                        align-self: center;
+    
+                        .check {
+                            margin: auto;
+                        }
+                    }
+
+                    .name-work {
+                        text-decoration: line-through;
+                        margin-left: 10px;
+                        text-decoration-color: #6549f5;
+                        text-decoration-thickness: 3px;
+                        align-self: center;
+                        color: #cdcdcd;
+                        line-height: 30px;
+                        font-size: 25px;
+                        flex: 1;
+                    }
+                }
+
+
+                .name-works {
+                    align-self: center;
+                    margin-left: 10px;
+                    flex: 1;
+                    font-size: 25px;
+                    line-height: 30px;
+                }
+
+                .close {
+                    align-self: center;
+                    justify-self: end;
+                    width: 40px;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .status {
+        font-size: 20px;
+        width: 100%;
+        display: flex;
+        box-sizing: border-box;
+        padding: 20px;
+        justify-content: space-between;
+
+        .status__tasks {
+            display: flex;
+            div {
+                border-radius: 20px;
+                margin-right: 20px;
+                padding: 5px 20px;
+                border: 1px solid #f3f3f8;
+                &:first-child {
+                    background-color: #eeeef6;
+                }
+            }
+        }
+        .number-completed {
+            padding: 5px 0;
+        }
+    }
+}
