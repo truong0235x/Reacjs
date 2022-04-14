@@ -20,7 +20,7 @@
 }
 
 .container {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
 
     .title {
@@ -79,6 +79,7 @@
 
         .tag {
             color: #ababb4;
+            width: 100%;
             display: flex;
             font-size: 22px;
             box-sizing: border-box;
@@ -104,7 +105,7 @@
             }
         }
 
-        .list-work {
+        .list-works {
             box-sizing: border-box;
             padding: 20px 0 20px 20px;
             min-height: 80px;
@@ -115,7 +116,7 @@
                 display: flex;
                 margin-bottom: 40px;
 
-                .list-works {
+                .list-work {
                     width: 100%;
                     display: flex;
                     cursor: pointer;
@@ -192,6 +193,94 @@
         }
         .number-completed {
             padding: 5px 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 740px) and (max-width: 1024px)  {
+    .container {
+        width: 95%;
+
+        .wrapper {
+            .status {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 739px) {
+    .container {
+        width: 100%;
+
+        .wrapper {
+            border-radius: unset;
+
+            .add-word {
+                padding: 10px 0 10px 10px;
+
+                .input {
+                    height: 22px;
+                }
+
+                .plus {
+                    .fa-plus {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .list-works {
+                padding: 10px 0 10px 10px;
+                font-size: 16px;
+                .works {
+                    .list-work {
+                        .circle {
+                            width: 30px;
+                            height: 30px;
+                            font-size: 16px;
+                        }
+                        .name-work {
+                            font-size: 20px;
+                        }
+                    }
+
+                    .name-works {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .tag {
+                font-size: 16px;
+                padding: 9px;
+
+                div[class^="tag__"] {
+                    font-size: 16px;
+                    margin-left: 10px;
+                    padding: 0 10px;
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+
+            .status {
+                padding: 10px;
+                font-size: 16px;
+                flex-wrap: wrap;
+
+                .status__tasks {
+                    justify-content: space-around;
+                    div {
+                        border-radius: unset;
+                        margin-right: unset;
+                        padding: 5px 7px;
+                    }
+                }
+                .number-completed {
+                    padding: 5px 7px;
+                }
+            }
         }
     }
 }

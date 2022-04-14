@@ -4,7 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 const getComplete = (task, handleClose, handleComplete) => {
     return (
         <div className='works'>
-          <div className='list-works' onClick={() => handleComplete(task.id)}>
+          <div className='list-work' onClick={() => handleComplete(task.id)}>
             <div className='circle'>
               <FaCheck className='check' />
             </div>
@@ -18,7 +18,7 @@ const getComplete = (task, handleClose, handleComplete) => {
 const noComplete = (task, handleClose, handleComplete) => {
     return (
         <div className='works'>
-          <div className='list-works' onClick={() => handleComplete(task.id)}>
+          <div className='list-work' onClick={() => handleComplete(task.id)}>
             <div className='circle'></div>
             <span className='name-works'>{task.name}</span>
           </div>

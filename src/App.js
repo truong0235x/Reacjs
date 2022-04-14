@@ -38,6 +38,8 @@ function App() {
     }
   },[tag])
 
+
+
   useLayoutEffect(() =>{
     const allWorks = [...statusWork]
     if (status === 'all') {
@@ -138,6 +140,7 @@ function App() {
       }
     })
 
+
     setWork([
       ...work
     ])
@@ -196,7 +199,7 @@ function App() {
           <div className='tag__school' onClick={e => handleTag(e.target, 'school')}>school</div>
         </div>
   
-        <div className='list-work'>
+        <div className='list-works'>
           {work.map(item => (
             <Task key={item.id} task={item} handleClose={handleClose} handleComplete={handleComplete} />
           ))}
